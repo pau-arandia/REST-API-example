@@ -1,4 +1,6 @@
-# Create and activate virtual environment using the `virtualenv` tool
+# A working example of a REST API using Flask and SQLAlchemy
+
+## Create and activate virtual environment using the `virtualenv` tool
 
 1. Install `virtualenv` through the CMD.
 
@@ -20,7 +22,7 @@
 
 3. Activate the environment.
     
-    WARNING: This step only works for cmd. For PowerShell, see: https://stackoverflow.com/questions/1365081/virtualenv-in-powershell
+    WARNING: This step only works for cdm. For PowerShell, see: https://stackoverflow.com/questions/1365081/virtualenv-in-powershell
     
     Run the `activate.bat` file located inside the `\Scripts` folder:
     
@@ -66,3 +68,32 @@
     ```bash
     env\Scripts\deactivate.bat
     ```
+
+-------------------
+
+## Launch the project
+
+1. To create the database, run the `create_sql_db.py` script from the cmd on the same route that this file is stored by executing this command on the cmd:
+
+    ```bash
+    python create_sql_db.py
+    ```
+    
+    This only needs to be done if the database does not exist.
+
+    Running `application.py` without running `create_sql_db.py` first will not work.
+
+2. To start the Flask server, run these commands in cmd to create environment variables (this needs to be done every time the cmd is closed):
+
+    ```bash
+    set FLASK_APP=application.py
+    set FLASK_ENV=development
+    ```
+
+    Then run:
+
+    ```bash
+    flask run
+    ```
+
+    This will return the port where the website is running. Copy the URL into a web browser to check the API responses.
