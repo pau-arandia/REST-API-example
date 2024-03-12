@@ -16,13 +16,15 @@
     python -m virtualenv env
     ```
 
-    `env` is the name of the environment as well as the name of the folder in which the environment is built. Calling this folder `env` is a convention.
+    `env` is the name of the environment as well as the name of the folder in which the environment is built. Calling this folder `env` is a convention, but any other name can be used.
 
     The `-m` flag is a command-line option that allows you to run a module as a script. This means you can execute Python code directly from the command line without the need for an external script file. Basically, we're activating Python first and then we're using the `virtualenv` tool.
 
+    Since virtual environments are not portable, it typically does not make sense to commit them for others to use. Hence why `virtualenv` automatically generates a `.gitignore` file inside the `env` folder. This text file only contains a `*` character, meaning that the whole `env` folder will get omitted when comitting changes.
+
 3. Activate the environment.
     
-    WARNING: This step only works for cdm. For PowerShell, see: https://stackoverflow.com/questions/1365081/virtualenv-in-powershell
+    WARNING: This step only works for cmd. For PowerShell, see: https://stackoverflow.com/questions/1365081/virtualenv-in-powershell
     
     Run the `activate.bat` file located inside the `\Scripts` folder:
     
@@ -54,6 +56,8 @@
     ```
     
     This will create a file called "requirements.txt" on the project's main folder which contains all the libraries and packages installed through `pip` in the environment that is currently active (the one we previously named `env`).
+
+    As mentioned above, environments are not portable, so the best tool for other developers to work under the same conditions that your project was developed in is to provide this text file including all libraries and its versions.
 
     Also, the following command will give us a list of all the dependencies that are currently found within the active environment:
 
