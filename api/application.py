@@ -9,9 +9,12 @@ from flask_sqlalchemy import SQLAlchemy
 #       set FLASK_ENV=development
 #
 #    Then run:
-#       flask run
+#       flask run --debug
 #
 #    This will return the port where the website is running.
+#    Debug mode shows an interactive debugger whenever a page raises an exception, 
+#    and restarts the server whenever you make changes to the code. 
+#    You can leave it running and just reload the browser page.
 #
 # 2. To create the database, run the 'create_sql_db.py' file from the cmd on the 
 #    same route that this file is stored by executing this command on the cmd:
