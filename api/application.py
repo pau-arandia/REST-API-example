@@ -21,7 +21,7 @@ from flask_sqlalchemy import SQLAlchemy
 #    This only needs to be done if the database does not exist.
 #############################################################################################
 
-# Flask setup
+# Flask setup: application instance
 app = Flask(__name__)
 
 # Configure the SQLite database and call it 'data'
